@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:app="clr-namespace:sqlsaturdaydemo;assembly=sqlsaturdaydemo"
+		BindingContext="{x:Static app:ViewModelLocator.SpeakersViewModel}"
+		x:Class="sqlsaturdaydemo.SpeakersPage">
+	<ContentPage.Content>
+		<ListView
+				ItemsSource="{Binding Speakers}"
+				HasUnevenRows="true">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="*"/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+							<Image
+								WidthRequest="66"
+								HeightRequest="66"
+								Grid.RowSpan="2"
+								Aspect="AspectFill"
+								HorizontalOptions="CenterAndExpand"
+								VerticalOptions="CenterAndExpand"
+								Source="{Binding ImageUrl}"/>
+							<Label Text="{Binding Name}"
+								Grid.Column="1"/>
+							<Label Text="{Binding Twitter}"
+								FontSize="12"
+								Grid.Column="1"
+								Grid.Row="1"/>
+						</Grid>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DNUGDemo.HomePage">
+	<ContentPage.Content>
+		<StackLayout Padding="10" BackgroundColor="Lime">
+			<Label Text="Hello World" TextColor="Red" TranslationX="40"/>
+			<Label Text="Hello my name is Simon and I like to do Drawings!"/>
+			<Label Text="All the Sparkies just went nuts!"/>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

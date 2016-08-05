@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:app="clr-namespace:sqlsaturdaydemo;assembly=sqlsaturdaydemo"
+		BindingContext="{x:Static app:ViewModelLocator.SessionsViewModel}"
+		x:Class="sqlsaturdaydemo.SessionsPage">
+	<ContentPage.Content>
+		<ListView
+				ItemsSource="{Binding Sessions}"
+				HasUnevenRows="true">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Padding="8" Spacing="8">
+							<Label Text="{Binding Name}"/>
+							<Label Text="{Binding SpeakerNames}"
+									FontSize="12"/>
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>
